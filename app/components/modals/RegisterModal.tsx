@@ -7,7 +7,6 @@ import { AiFillGithub } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
 
 import axios from 'axios';
-
 import useRegisterModal from '~/app/hooks/useRegisterModal';
 
 import Button from '../Button';
@@ -37,11 +36,11 @@ const RegisterModal = () => {
     axios
       .post('/api/register', data)
       .then(() => {
-        toast.success('Registered!');
+        toast.success('registered!');
         registerModal.onClose();
       })
       .catch((error) => {
-        toast.error('error');
+        toast.error('something went wrong');
       })
       .finally(() => {
         setIsLoading(false);
